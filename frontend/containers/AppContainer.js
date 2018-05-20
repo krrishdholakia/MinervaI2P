@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
-import Title from '../components/Title';
+import LandingContainer from './LandingContainer';
 
-const AppContainer = ({ name }) => {
-    return (
-        <div>
-            <Title name={name} />
-        </div>
-    );
-};
+class AppContainer extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return <LandingContainer/>; 
+    }
+
+}
 
 AppContainer.propTypes = {
     name: PropTypes.string,

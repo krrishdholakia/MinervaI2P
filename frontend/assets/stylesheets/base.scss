@@ -2,3 +2,59 @@ h1 {
   font-family: helvetica;
   font-weight: 200;
 }
+
+.brand-name {
+  display: inline-block;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-family:Futura
+}
+
+.search-bar {
+  display: inline-block;
+  margin-top: 20px;
+  font-family:Futura;
+  margin-left: 267px;
+  padding-left: 1px;
+  line-height: 33px;
+  width: 530px;
+}
+
+.nav-links {
+  display: inline-block;
+  margin-top: 20px;
+  font-family: Futura;
+  margin-left: 90px;
+}
+
+.explore-tabs {
+  display: inline-block;
+  font-family: Futura; 
+  font-size: 18px; 
+  border-width: 1px; 
+  border-color: black; 
+  margin-left: 20px; 
+  padding-left: 20px; 
+  padding-right: 20px; 
+  padding-top: 10px;
+  padding-bottom: 10px; 
+  border-style: solid;
+}
+
+.landing-header {
+  font-family: Futura; 
+  font-size: 20px; 
+  margin-left: 20px; 
+}
+
+.landing-billboards {
+  display: inline-block; 
+  font-family: Futura; 
+  font-size: 20px; 
+  margin-left: 20px;
+  width: 250px; 
+}
+
+.billboard-title {
+  font-size: 18px
+}

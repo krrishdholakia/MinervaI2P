@@ -39,6 +39,7 @@ h1 {
   padding-top: 10px;
   padding-bottom: 10px; 
   border-style: solid;
+  text-decoration-color: black;
 }
 
 .landing-header {
@@ -53,6 +54,14 @@ h1 {
   font-size: 20px; 
   margin-left: 20px;
   width: 250px; 
+}
+
+.billboard-image {
+  width: 250px; 
+  height: 200px; 
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
 }
 
 .billboard-title {

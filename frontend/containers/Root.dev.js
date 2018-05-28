@@ -7,12 +7,10 @@ import { BrowserRouter } from 'react-router-dom'
 export default function Root({ store }) {
     return (
         <Provider store={store}>
-            <div>
                 <BrowserRouter>
                         <AppContainer />
                         {/* <DevTools /> */}
                 </BrowserRouter>
-            </div>
         </Provider>
     );
 }

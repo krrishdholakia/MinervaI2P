@@ -12,11 +12,12 @@ class LandingContainer extends React.Component {
     }
 
     render() {
+        console.log("reaches Landing Container")
         return (
             <div>
                 <TopNav/>
                 <Explore/>
-                <NearYou/>
+                <NearYou limit={5}/>
                 <Deals/>
                 <Trending/>
             </div>

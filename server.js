@@ -6,7 +6,8 @@ const api = require('./backend/routes');
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (request, response) => {
+app.get('/*', (request, response) => {
+    console.log("it reaches /")
     response.sendFile(__dirname + '/public/index.html'); // For React/Redux
 });
 

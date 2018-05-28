@@ -8,7 +8,12 @@ module.exports = {
     module: {
         rules: [
             { test: /\.js?$/, loader: 'babel-loader', exclude: /node_modules/ },
-            { test: /\.s?css$/, loader: 'style-loader!css-loader!sass-loader' },
+            { test: /\.s?css$/, loader: 'style-loader!css-loader!sass-loader'},
+            {
+                test: /\.(png|woff|woff2|eot|ttf|svg)$/,
+                loader: 'url-loader?limit=100000'
+              }
+              
         ],
     },
     resolve: {
@@ -21,6 +26,7 @@ module.exports = {
     },
     devtool: 'cheap-eval-source-map',
     devServer: {
+        historyApiFallback: true,
         contentBase: './public',
         hot: true
     },

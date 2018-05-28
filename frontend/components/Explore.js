@@ -6,13 +6,11 @@ import {LinkContainer} from 'react-router-bootstrap'
 
 const Explore = () => {
     return (
-        <Router>
-        <div>
-            <h3 className="explore-tabs"> <Link to = "/nearYou"> Near You </Link> </h3>
+        <div style={{height:'7em'}}>
+            <Link to = "/nearYou"> <h3 className="explore-tabs"> Near You </h3> </Link>
             <h3 className="explore-tabs"> Deals </h3> 
             <h3 className="explore-tabs"> Popular </h3> 
         </div>
-        </Router>
     );
 }
 

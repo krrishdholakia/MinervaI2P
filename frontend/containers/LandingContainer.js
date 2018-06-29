@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import TopNav from '../components/TopNav';
 import NearYou from '../components/NearYou';
 import Deals from '../components/Deals';
-import Trending from '../components/Trending';
+import Popular from '../components/Popular';
 import Explore from '../components/Explore';
 
 class LandingContainer extends React.Component {
@@ -17,9 +17,9 @@ class LandingContainer extends React.Component {
             <div>
                 <TopNav/>
                 <Explore/>
-                <NearYou limit={5}/>
-                <Deals/>
-                <Trending/>
+                <NearYou limit={3}/>
+                <Deals limit={3}/>
+                <Popular limit={3}/>
             </div>
         );
     }

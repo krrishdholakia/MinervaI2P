@@ -8,8 +8,8 @@ const Explore = () => {
     return (
         <div style={{height:'7em'}}>
             <Link to = "/nearYou"> <h3 className="explore-tabs"> Near You </h3> </Link>
-            <h3 className="explore-tabs"> Deals </h3> 
-            <h3 className="explore-tabs"> Popular </h3> 
+            <Link to = "/deals"> <h3 className="explore-tabs"> Deals </h3> </Link>
+            <Link to = "/popular"> <h3 className="explore-tabs"> Popular </h3> </Link>
         </div>
     );
 }

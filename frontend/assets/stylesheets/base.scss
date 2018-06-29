@@ -69,6 +69,8 @@ h3 {
   margin-left: 20px;
   width: 250px; 
   font-weight: normal;
+  padding-bottom: 20px;
+
 }
 
 .billboard-image {
@@ -109,4 +111,75 @@ h3 {
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: normal;
+}
+
+
+.ui.modal:not(.compact) {
+  width: calc(100% - 50px) !important;
+  margin-left: 25px !important;
+  height: auto !important;
+  margin-top: 25px !important;
+  }
+
+.billboard-flex-superparent {
+  display: flex; 
+}
+
+.billboard-flex-parent {
+  width: 50%;
+}
+
+.billboard-image-modal {
+  width: 350px; 
+  height: 300px; 
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  font-weight: normal;
+}
+
+.map-modal {
+  width: 350px; 
+  height: 300px;
+  margin-top: 2%; 
+}
+
+.sb-avatar__text {
+  color: black !important; /* !important used to override the default react-avatar styling */
+  background: white !important; /* !important used to override the default react-avatar styling */
+}
+
+.billboard-seller {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-right: 20%; 
+}
+
+.contact-seller {
+  width: 50%; 
+}
+
+.contact-seller h3 {
+  font-size: 30px; 
+}
+
+.billboard-seller-reviews {
+  margin-top: 20%; 
+  font-weight: lighter; 
+  margin-right: 20%; 
+}
+
+.billboard-seller-reviews h3 {
+  font-size: 30px; 
+}
+.billboard-seller-reviews-categories {
+  display: flex; 
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  font-weight: lighter; 
+  font-size: 25px;
+  font-family: Futura; 
+  justify-content: space-between;
 }

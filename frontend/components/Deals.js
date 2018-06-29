@@ -1,10 +1,12 @@
 import React from 'react'; 
 import PropTypes from 'prop-types';
 import Rectangle from 'react-rectangle';
+import BillboardInfo from './BillboardInfo';
 
-const BillboardGenerator = () => {
+const BillboardGenerator = (limit) => {
+    console.log("limit at deals:" + limit)
     let billboardDeals = [];
-    for(let count = 0; count < 5; count++) {
+    for(let count = 0; count < limit; count++) {
         billboardDeals.push(
         <div className = "landing-billboards">
             <div className = "billboard-image">
@@ -13,19 +15,18 @@ const BillboardGenerator = () => {
                 </Rectangle>
             </div>
             <h3 className = "billboard-title"> billboard{count} </h3>
-            <p> Location </p>
-            <p> Traffic </p>
-            <p> Price </p>
+            <p> Location <br/> Traffic <br/> Price </p>
+            <BillboardInfo/>
         </div>
         );
     }
     return billboardDeals
 }
-const Deals = () => {
+const Deals = ({limit}) => {
     return (
         <div>
             <h3 className = "landing-header">Great Deals on Billboards in your area</h3>
-            {BillboardGenerator()}
+            {BillboardGenerator(limit)}
         </div>
     );
 };

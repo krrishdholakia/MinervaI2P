@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import {BrowserRouter, Route, Switch, Redirect, withRouter } from "react-router-dom";
 import LandingContainer from './LandingContainer';
 import NearYouContainer from './NearYouContainer';
+import Deals from '../components/Deals';
+import Popular from '../components/Popular';
 
 class AppContainer extends React.Component {
     constructor(props) {
@@ -16,6 +18,8 @@ class AppContainer extends React.Component {
                         <Switch>
                             <Route exact path = '/' component = {LandingContainer}/>
                             <Route path = '/nearYou' component = {NearYouContainer}/>
+                            <Route path = '/deals' component = {Deals}/>
+                            <Route path  = '/popular' component = {Popular}/>
                         </Switch>
                 </div>
         ) 

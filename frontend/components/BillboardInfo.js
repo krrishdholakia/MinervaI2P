@@ -69,6 +69,14 @@ const BillboardInfo = () => {
                                         <p> Location ★★★☆☆ </p>
                                     </div>
                             </div>
+                            <div className="billboard-categories">
+                                <h3> Popular billboard categories near this </h3> 
+                                <div className="billboard-category-types"> 
+                                    <h3 className="billboard-category-type"> Beauty & Wellness </h3> 
+                                    <h3 className="billboard-category-type"> Law </h3> 
+                                    <h3 className="billboard-category-type"> Politics </h3> 
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </Modal.Content>

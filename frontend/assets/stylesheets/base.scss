@@ -127,6 +127,9 @@ h3 {
 
 .billboard-flex-parent {
   width: 50%;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-evenly;
 }
 
 .billboard-image-modal {
@@ -165,8 +168,32 @@ h3 {
   font-size: 30px; 
 }
 
+.billboard-categories h3 {
+  font-size: 30px; 
+}
+
+.billboard-category-types{
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between; 
+  flex-wrap: wrap;
+}
+
+.billboard-category-types h3 {
+  font-size: 20px;
+}
+
+.billboard-category-type {
+  margin: 0; 
+  border-radius: 4px;
+  border-style: solid; 
+  border-width: 1px; 
+  padding-left: 2%; 
+  padding-right: 2%; 
+  height: fit-content; 
+}
+
 .billboard-seller-reviews {
-  margin-top: 20%; 
   font-weight: lighter; 
   margin-right: 20%; 
 }
@@ -179,7 +206,7 @@ h3 {
   flex-direction: row; 
   flex-wrap: wrap; 
   font-weight: lighter; 
-  font-size: 25px;
+  font-size: 20px;
   font-family: Futura; 
   justify-content: space-between;
 }

@@ -6,8 +6,6 @@ import SignUp from './SignUp';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import * as signupActions from '../actions/signup'
-
 class TopNav extends React.Component {
     constructor(props) {
         super(props);
@@ -15,12 +13,12 @@ class TopNav extends React.Component {
       }
     
     handleClick() {
-        console.log("signUp value1:" + this.props.signup);
+        // console.log("signUp value1:" + this.props.signup);
         // this.props.signUpModal(true);
         this.props.signout(false);
         console.log("signout: " + this.props.signout)
         console.log('Click happened');
-        console.log("signUp value2:" + this.props.signup);
+        // console.log("signUp value2:" + this.props.signup);
     }
     render() {
         return (
@@ -39,16 +37,8 @@ TopNav.propTypes = {
     name: PropTypes.string,
 };
 
-const mapStateToProps = (state) => {
-    return {
-        signup: state.signup.signup,
-        signout: state.signup.signout
-    }
-}
-
-const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators(signupActions, dispatch);
-}
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(TopNav);
+
+// export default connect(mapStateToProps, mapDispatchToProps)(TopNav);
+export default TopNav;

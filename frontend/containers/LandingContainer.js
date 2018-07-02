@@ -5,6 +5,12 @@ import NearYou from '../components/NearYou';
 import Deals from '../components/Deals';
 import Popular from '../components/Popular';
 import Explore from '../components/Explore';
+import * as signupActions from '../actions/signup'
+
+
+
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 class LandingContainer extends React.Component {
     constructor(props) {
@@ -15,7 +21,7 @@ class LandingContainer extends React.Component {
         console.log("reaches Landing Container")
         return (
             <div>
-                <TopNav/>
+                <TopNav signout={this.props.signout}/>
                 <Explore/>
                 <NearYou limit={3}/>
                 <Deals limit={3}/>
@@ -25,4 +31,15 @@ class LandingContainer extends React.Component {
     }
 }
 
-export default LandingContainer
+const mapStateToProps = (state) => {
+    console.log("state: "+ state)
+    return {
+        signout: state.signout
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return bindActionCreators(signupActions, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LandingContainer);

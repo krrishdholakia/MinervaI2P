@@ -38,6 +38,13 @@ h3 {
   font-weight: normal;
 }
 
+.explore-container {
+  height: 7em;
+  display: flex; 
+  flex-direction: row;
+  align-items: center
+}
+
 .explore-tabs {
   display: inline-block;
   font-family: Futura; 
@@ -53,6 +60,79 @@ h3 {
   text-decoration: none; 
   color: black;
   font-weight: normal;
+}
+
+.sign-up-container.ui.modal:not(.compact) {
+  margin-top: 100px; /* !important used to override the custom semantic-ui-modal styling */
+  margin-right: 350px !important; /* !important used to override the custom semantic-ui-modal styling */
+  margin-left: 350px !important; /* !important used to override the custom semantic-ui-modal styling */
+  max-width: 504px;
+  width: fit-content; 
+  justify-content:  center;
+  display:  flex;
+  /* font-style: initial; */
+  font-family: Futura;
+  font-weight:  lighter;
+  padding: 1.25rem 1.5rem;
+  border-radius: 1px; 
+}
+
+.dimmed.dimmable > .ui.modals.dimmer.visible {
+  display: flex !important;
+}
+
+// .ui.page.modals.dimmer.transition.visible.active {
+//   padding-top: 100px;
+//   padding-right:  350px;
+//   padding-left:  350px;
+// }
+
+// .ui.modal.transition.visible.active {
+//   justify-content:  center;
+//   display:  flex;
+//   /* font-style: initial; */
+//   font-family: Futura;
+//   font-weight:  lighter;
+//   font-size: 30px;
+// }
+
+.modal-header {
+  font-size: 30px;
+  line-height: 1.28571429em;
+  font-weight: lighter; 
+  display: flex; 
+  justify-content: center; 
+  padding: 1.25rem 1.5rem;
+
+}
+
+.sign-up-inputs {
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  height: 3em;
+  border-style:  solid;
+  border-width: 1px;
+  border-radius:  2px;
+  /* border-color: bisque; */
+  box-sizing:  border-box;
+  border-color:  rgb(219, 219, 219);
+  font-size: 16px;
+  /* font-family:  futura; */
+  font-weight: lighter;
+  margin-bottom: 5%; 
+}
+
+.ui.button.sign-up-button {
+  width: 100%; 
+  margin-left: 0 !important; /* !important used to override the default semantic-ui-modal styling */
+  background: white; 
+  border-color: black; 
+  border-radius: 1px; 
+  border-style: solid; 
+  border-width: 2px; 
+  height: 3em;
+
 }
 
 .landing-header {
@@ -115,13 +195,26 @@ h3 {
 
 
 .ui.modal:not(.compact) {
-  width: calc(100% - 50px) !important;
-  margin-left: 25px !important;
-  height: auto !important;
-  margin-top: 25px !important;
+  width: calc(100% - 50px);
+  margin-left: 25px !important; /* !important used to override the default semantic-ui-modal styling */
+  height: auto !important; /* !important used to override the default semantic-ui-modal styling */
+  margin-top: 25px !important; /* !important used to override the default semantic-ui-modal styling */
   }
 
-.billboard-flex-superparent {
+.billboard-flex-topmap {
+  width: 100%; 
+  height: fit-content; 
+  margin-bottom: 2%;
+}
+
+.map-modal {
+  width: 100%; 
+  border-width: 1px; 
+  border-color: white; 
+  border-style: solid; 
+}
+
+.billboard-flex-content {
   display: flex; 
 }
 
@@ -130,22 +223,9 @@ h3 {
   display: flex; 
   flex-direction: column; 
   justify-content: space-evenly;
+  margin-bottom: 2%;
 }
 
-.billboard-image-modal {
-  width: 350px; 
-  height: 300px; 
-  border-width: 1px;
-  border-color: white;
-  border-style: solid;
-  font-weight: normal;
-}
-
-.map-modal {
-  width: 350px; 
-  height: 300px;
-  margin-top: 2%; 
-}
 
 .sb-avatar__text {
   color: black !important; /* !important used to override the default react-avatar styling */
@@ -158,6 +238,7 @@ h3 {
   justify-content: space-between; 
   align-items: center; 
   margin-right: 20%; 
+  margin-bottom: 4%; 
 }
 
 .contact-seller {
@@ -169,7 +250,7 @@ h3 {
 }
 
 .billboard-categories h3 {
-  font-size: 30px; 
+  font-size: 25px; 
 }
 
 .billboard-category-types{
@@ -195,11 +276,11 @@ h3 {
 
 .billboard-seller-reviews {
   font-weight: lighter; 
-  margin-right: 20%; 
+  margin-bottom: 4%; 
 }
 
 .billboard-seller-reviews h3 {
-  font-size: 30px; 
+  font-size: 25px; 
 }
 .billboard-seller-reviews-categories {
   display: flex; 
@@ -209,4 +290,141 @@ h3 {
   font-size: 20px;
   font-family: Futura; 
   justify-content: space-between;
+}
+
+.billboard-seller-reviews-categories p {
+  margin: 0; 
+}
+
+.billboard-bid-modal {
+  width: 100%;
+  height: fit-content;
+  font-weight: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.billboard-bid-content {
+  font-family: Futura;
+  font-size: 20px;
+  width: 50%;
+  align-items: center;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  font-weight: normal;
+}
+
+.billboard-flex-bottomphotos {
+  width: 100%; 
+}
+
+.billboard-flex-bottomphotos h3 {
+  font-size: 30px; 
+}
+
+.billboard-images-modal {
+  width: 100%; 
+  height: 300px; 
+  font-weight: normal;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.landing-billboards-modal {
+  display: inline-block; 
+  font-family: Futura; 
+  font-size: 20px; 
+  width: 30%; 
+  font-weight: normal;
+}
+
+.billboard-image-modal {
+  width: 100%; 
+  height: 100%; 
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  font-weight: normal;
+}
+
+.DateRangePicker {
+  display: flex; 
+  flex-direction: row; 
+  justify-content: center;
+  width: fit-content;
+}
+
+.CalendarDay__selected, .CalendarDay__selected:active, .CalendarDay__selected:hover {
+  background: black !important; 
+  border: 1px solid white !important;  
+  color: white !important;
+}
+
+.CalendarDay__selected_span, .CalendarDay_hovered_span, .CalendarDay_hovered_span:hover {
+  background: black !important; 
+  border: 1px solid white !important; 
+  color: white !important;
+}
+
+.DateInput_input_focused { 
+  border-bottom: 2px solid black !important; 
+}
+
+.DayPickerKeyboardShortcuts_show__bottomRight {
+  visibility: hidden
+}
+
+.DateRangePickerInput, .DateInput_input, .DateInput {
+  background-color: transparent;
+  color: white; 
+  font-family: Futura; 
+  font-weight: lighter; 
+}
+
+.DateRangePickerInput_arrow_svg {
+  fill: white
+}
+
+.billboard-booking-container {
+  padding: 5%; 
+  height: 100%;
+}
+
+.billboard-booking { 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  height: 100%; 
+}
+
+.billboard-booking-categories {
+  color: white;
+  border-width: 1px;
+  border-color: white;
+  border-style: solid;
+  display: inline-block;
+  padding-left: 20px;
+  padding-top: 10px; 
+  padding-right: 20px;
+  padding-bottom: 10px;
+  border-radius: 2px;
+  font-weight: lighter;
+  margin: 0;
+}
+
+.ui.button.submit-bid-button {
+  width: 100%; 
+  margin-left: 0 !important; /* !important used to override the default semantic-ui-modal styling */
+  background: transparent; 
+  border-color: white; 
+  border-radius: 2px; 
+  border-style: solid; 
+  border-width: 1px; 
+  font-family: Futura; 
+  font-size: 20px; 
+  font-weight: lighter; 
+  color: white; 
 }

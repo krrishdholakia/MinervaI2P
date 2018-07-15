@@ -5,6 +5,7 @@ import { withScriptjs, withGoogleMap, GoogleMap, Marker } from "react-google-map
 import { compose, withProps } from "recompose";
 import Rectangle from 'react-rectangle';
 import Avatar from 'react-avatar';
+import BillboardBooking from './BillboardBooking';
 
 const MyMapComponent = compose(
     withProps({
@@ -37,45 +38,77 @@ const headerStyle = {
   fontWeight: 'lighter'
 };
 
+const BillboardGenerator = (limit) => {
+    console.log(limit)
+    let billboardNearYou = [];
+    for(let count = 0; count < limit; count++) {
+        billboardNearYou.push(
+        <div className = "landing-billboards-modal">
+            <div className = "billboard-image-modal">
+                <Rectangle aspectRatio={[3, 3]}>
+                    <div style={{ width: '100%', height: '100%' }} />
+                </Rectangle>
+            </div>
+    </div>
+    );
+    }
+    return billboardNearYou
+}
+
 const BillboardInfo = () => {
     return (
         <Modal trigger={<Button>Check it out!</Button>} basic size='small'>
             <Header icon='compass' content='Buckhead · Atlanta, Georgia' style={headerStyle}/>
                 <Modal.Content>
                     <div className="billboard-flex-superparent">
-                        <div className="billboard-flex-parent">
-                            <div className="billboard-image-modal">
-                                <Rectangle aspectRatio={[10, 10]}>
-                                    <div style={{ width: '100%', height: '100%' }} />
-                                </Rectangle>
-                            </div>
+                        <div className="billboard-flex-topmap">
                             <div className="map-modal">
                                 <MyMapComponent isMarkerShown />
                             </div>
                         </div>
-                        <div className="billboard-flex-parent">
-                            <div className="billboard-seller">
-                                <Avatar name="Foo Bar" round={true} size = {150}/>
-                                <div className="contact-seller"> 
-                                    <h3> Meet Frank! </h3>
-                                    <Button fluid style={{fontFamily: 'Futura', fontWeight: 'lighter'}}> Contact Frank </Button>
+                        <div className="billboard-flex-content">
+                            <div className="billboard-flex-parent">
+                                <div className="billboard-seller">
+                                    <Avatar name="Foo Bar" round={true} size = {150}/>
+                                    <div className="contact-seller"> 
+                                        <h3> Meet Frank! </h3>
+                                        <Button fluid style={{fontFamily: 'Futura', fontWeight: 'lighter'}}> Contact Frank </Button>
+                                    </div>
+                                </div>
+                                <div className="billboard-seller-reviews">
+                                        <h3> 10 Reviews ★★★★☆ </h3>
+                                        <div className="billboard-seller-reviews-categories">
+                                            <p> Communication ★★★☆☆ </p>
+                                            <p> Value ★★★★☆ </p>
+                                            <p> Location ★★★☆☆ </p>
+                                        </div>
+                                </div>
+                                <div className="billboard-categories">
+                                    <h3> Popular billboard categories near this </h3> 
+                                    <div className="billboard-category-types"> 
+                                        <h3 className="billboard-category-type"> Beauty & Wellness </h3> 
+                                        <h3 className="billboard-category-type"> Law </h3> 
+                                        <h3 className="billboard-category-type"> Politics </h3> 
+                                    </div>
                                 </div>
                             </div>
-                            <div className="billboard-seller-reviews">
-                                    <h3> 10 Reviews ★★★★☆ </h3>
-                                    <div className="billboard-seller-reviews-categories">
-                                        <p> Communication ★★★☆☆ </p>
-                                        <p> Value ★★★★☆ </p>
-                                        <p> Location ★★★☆☆ </p>
+                            <div className="billboard-flex-parent">
+                                <div className="billboard-bid-modal">
+                                    <div className = "billboard-bid-content">
+                                        <Rectangle aspectRatio={[3, 3]}>
+                                            <div style={{ width: '100%', height: '100%' }}>
+                                                <BillboardBooking price={20}/>
+                                                {/* <TestDate/> */}
+                                            </div>
+                                        </Rectangle>
                                     </div>
                             </div>
-                            <div className="billboard-categories">
-                                <h3> Popular billboard categories near this </h3> 
-                                <div className="billboard-category-types"> 
-                                    <h3 className="billboard-category-type"> Beauty & Wellness </h3> 
-                                    <h3 className="billboard-category-type"> Law </h3> 
-                                    <h3 className="billboard-category-type"> Politics </h3> 
-                                </div>
+                            </div>
+                        </div>
+                        <div className="billboard-flex-bottomphotos">
+                            <h3> As seen in the wild </h3> 
+                            <div className="billboard-images-modal">
+                                {BillboardGenerator(3)}
                             </div>
                         </div>
                     </div>

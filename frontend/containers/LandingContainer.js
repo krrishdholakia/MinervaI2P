@@ -5,9 +5,8 @@ import NearYou from '../components/NearYou';
 import Deals from '../components/Deals';
 import Popular from '../components/Popular';
 import Explore from '../components/Explore';
-import * as signupActions from '../actions/signup'
-
-
+import * as signupActions from '../actions/listing'
+import * as billboardActions from '../actions/billboardbuying'
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -19,11 +18,13 @@ class LandingContainer extends React.Component {
 
     render() {
         console.log("reaches Landing Container")
+        console.log("updateSignUpModal: " + this.props.updateSignUpModal)
+        console.log("onBillboardClick: " + this.props.onBillboardClick)
         return (
             <div>
-                <TopNav signout={this.props.signout}/>
+                <TopNav updateSignUpModal={this.props.updateSignUpModal} signup={this.props.signup} updateSellModal={this.props.updateSellModal} onsell={this.props.onsell}/>
                 <Explore/>
-                <NearYou limit={3}/>
+                <NearYou limit={3} onBillboardClick={this.props.onBillboardClick} screenstate={this.props.billboardClick}/>
                 <Deals limit={3}/>
                 <Popular limit={3}/>
             </div>
@@ -31,15 +32,23 @@ class LandingContainer extends React.Component {
     }
 }
 
+LandingContainer.propTypes = {
+    signup : PropTypes.bool.isRequired, 
+};
+
 const mapStateToProps = (state) => {
-    console.log("state: "+ state)
+    console.log("state.signup.signUp: " + state.signup.signUp)
+    console.log("state.billboardbuying.billboardClick: " + state.billboardbuying.billboardClick)
+
     return {
-        signout: state.signout
+        signup: state.signup.signUp,
+        onsell: state.signup.onsell,
+        billboardClick: state.billboardbuying.billboardClick
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators(signupActions, dispatch);
+    return bindActionCreators(Object.assign({}, signupActions, billboardActions), dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LandingContainer);

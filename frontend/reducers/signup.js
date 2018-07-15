@@ -2,29 +2,25 @@ import * as types from '../actions/types'
 
 const initialState = {
     signUp: false,
-    signout: undefined
+    onsell: false
 }
 
 console.log("reaches here !!")
-// export default function signup(state = initialState, action) {
-//     console.log("reaches here !!")
-//     switch(action.type) {
-//         case types.SIGN_UP:
-//             return Object.assign({}, state, {signUp: action.signupstate})
-//         default: 
-//             return state; 
-//     }
-// }
-
-function testfunc(state = initialState, action) {
-    console.log("Action:" + action)
-    return Object.assign({}, state, {signout: action.signoutstate})
-    // switch(action.type) {
-    //     case types.SIGN_OUT:
-    //         return Object.assign({}, state, {signout: action.signoutstate})
-    //     default: 
-    //         return state; 
-    // }
+export function signup(state = initialState, action) {
+    console.log("reaches here !!")
+    switch(action.type) {
+        case types.SIGN_UP:
+            return Object.assign({}, state, {signUp: action.signupstate})
+        default: 
+            return state; 
+    }
 }
 
-export default testfunc;
+export default function onsell(state = initialState, action) {
+    switch(action.type) {
+        case types.BILLBOARD_SELL:
+            return Object.assign({}, state, {onsell: action.onsell})
+        default: 
+            return state; 
+    }
+}
